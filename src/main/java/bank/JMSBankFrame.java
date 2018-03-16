@@ -7,6 +7,10 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.ObjectMessage;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +21,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import messaging.QUEUE;
+import messaging.QueueHandler;
 import messaging.RequestReply;
+import models.ISendable;
 import models.bank.BankInterestReply;
 import models.bank.BankInterestRequest;
 
@@ -52,6 +59,24 @@ public class JMSBankFrame extends JFrame {
      * Create the frame.
      */
     public JMSBankFrame() {
+        new QueueHandler().Receive(QUEUE.bankInterestRequest, new MessageListener() {
+            public void onMessage(Message message) {
+                if (message instanceof ObjectMessage) {
+                    ISendable obj = null;
+                    try {
+                        obj = (ISendable) ((ObjectMessage) message).getObject();
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+                    if (obj instanceof BankInterestRequest) {
+                        BankInterestRequest req = (BankInterestRequest) obj;
+                        System.out.println(req.toString());
+
+                    }
+                }
+            }
+        });
+
         setTitle("JMS Bank - ABN AMRO");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 300);
@@ -74,7 +99,8 @@ public class JMSBankFrame extends JFrame {
         gbc_scrollPane.gridy = 0;
         contentPane.add(scrollPane, gbc_scrollPane);
 
-        final JList<RequestReply<BankInterestRequest, BankInterestReply>> list = new JList<RequestReply<BankInterestRequest, BankInterestReply>>(listModel);
+        final JList<RequestReply<BankInterestRequest, BankInterestReply>> list =
+                new JList<RequestReply<BankInterestRequest, BankInterestReply>>(listModel);
         scrollPane.setViewportView(list);
 
         JLabel lblNewLabel = new JLabel("type reply");

@@ -16,7 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import messaging.Receiver;
+import messaging.QUEUE;
+import messaging.QueueHandler;
 import models.ISendable;
 import models.bank.BankInterestReply;
 import models.bank.BankInterestRequest;
@@ -50,7 +51,7 @@ public class LoanBrokerFrame extends JFrame {
      * Create the frame.
      */
     public LoanBrokerFrame() {
-        new Receiver().Receive(new MessageListener() {
+        new QueueHandler().Receive(QUEUE.loanRequest, new MessageListener() {
             public void onMessage(Message message) {
                 if (message instanceof ObjectMessage) {
                     ISendable obj = null;
@@ -62,6 +63,12 @@ public class LoanBrokerFrame extends JFrame {
                     if(obj instanceof LoanRequest){
                         LoanRequest req = (LoanRequest)obj;
                         System.out.println(req.toString());
+
+                        BankInterestRequest bir = new BankInterestRequest();
+                        bir.setTime(req.getTime());
+                        bir.setAmount(req.getAmount());
+
+                        new QueueHandler().SendObject(bir);
 
                         add(req);
                     }
