@@ -27,6 +27,7 @@ import messaging.RequestReply;
 import models.ISendable;
 import models.bank.BankInterestReply;
 import models.bank.BankInterestRequest;
+import models.loan.LoanRequest;
 
 public class JMSBankFrame extends JFrame {
 
@@ -71,7 +72,7 @@ public class JMSBankFrame extends JFrame {
                     if (obj instanceof BankInterestRequest) {
                         BankInterestRequest req = (BankInterestRequest) obj;
                         System.out.println(req.toString());
-
+                        listModel.addElement(new RequestReply<BankInterestRequest, BankInterestReply>(req, null));
                     }
                 }
             }
@@ -131,6 +132,9 @@ public class JMSBankFrame extends JFrame {
                     rr.setReply(reply);
                     list.repaint();
                     //todo: sent JMS message with the reply to Loan Broker
+                    LoanRequest loanRequest = rr.getRequest().getLoanRequest();
+                    reply.setLoanRequest(loanRequest);
+                    new QueueHandler().SendObject(reply);
                 }
             }
         });

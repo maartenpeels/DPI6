@@ -1,6 +1,7 @@
 package models.bank;
 
 import models.ISendable;
+import models.loan.LoanRequest;
 
 /**
  * This class stores information about the bank reply
@@ -10,15 +11,18 @@ public class BankInterestReply implements ISendable{
 
     private double interest; // the loan interest
     private String bankId; // the nunique quote Id
+    private LoanRequest loanRequest;
 
     public BankInterestReply() {
         this.interest = 0;
         this.bankId = "";
+        this.loanRequest = null;
     }
 
     public BankInterestReply(double interest, String quoteId) {
         this.interest = interest;
         this.bankId = quoteId;
+        this.loanRequest = null;
     }
 
     public double getInterest() {
@@ -35,6 +39,14 @@ public class BankInterestReply implements ISendable{
 
     public void setQuoteId(String quoteId) {
         this.bankId = quoteId;
+    }
+
+    public LoanRequest getLoanRequest() {
+        return loanRequest;
+    }
+
+    public void setLoanRequest(LoanRequest loanRequest) {
+        this.loanRequest = loanRequest;
     }
 
     public String toString() {

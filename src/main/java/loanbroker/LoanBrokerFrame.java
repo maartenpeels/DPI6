@@ -67,10 +67,32 @@ public class LoanBrokerFrame extends JFrame {
                         BankInterestRequest bir = new BankInterestRequest();
                         bir.setTime(req.getTime());
                         bir.setAmount(req.getAmount());
-
-                        new QueueHandler().SendObject(bir);
+                        bir.setLoanRequest(req);
 
                         add(req);
+                        add(req, bir);
+
+                        new QueueHandler().SendObject(bir);
+                    }
+                }
+            }
+        });
+
+        new QueueHandler().Receive(QUEUE.bankInterestReply, new MessageListener() {
+            public void onMessage(Message message) {
+                if (message instanceof ObjectMessage) {
+                    ISendable obj = null;
+                    try {
+                        obj = (ISendable)((ObjectMessage) message).getObject();
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+                    if(obj instanceof BankInterestReply){
+                        BankInterestReply req = (BankInterestReply)obj;
+                        LoanRequest lreq = req.getLoanRequest();
+                        System.out.println(req.toString());
+                        System.out.println(lreq.toString());
+                        add(lreq, req);
                     }
                 }
             }
@@ -106,6 +128,11 @@ public class LoanBrokerFrame extends JFrame {
 
         for (int i = 0; i < listModel.getSize(); i++) {
             JListLine rr = listModel.get(i);
+            if(rr.getLoanRequest().getSsn() == request.getSsn()
+                    && rr.getLoanRequest().getTime() == request.getTime()
+                    && rr.getLoanRequest().getAmount() == request.getAmount()) {
+                return rr;
+            }
             if (rr.getLoanRequest() == request) {
                 return rr;
             }
