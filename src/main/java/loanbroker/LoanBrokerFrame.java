@@ -21,6 +21,7 @@ import messaging.QueueHandler;
 import models.ISendable;
 import models.bank.BankInterestReply;
 import models.bank.BankInterestRequest;
+import models.loan.LoanReply;
 import models.loan.LoanRequest;
 
 public class LoanBrokerFrame extends JFrame {
@@ -93,6 +94,12 @@ public class LoanBrokerFrame extends JFrame {
                         System.out.println(req.toString());
                         System.out.println(lreq.toString());
                         add(lreq, req);
+
+                        LoanReply loanReply = new LoanReply();
+                        loanReply.setQuoteID(req.getQuoteId());
+                        loanReply.setInterest(req.getInterest());
+                        loanReply.setLoanRequest(lreq);
+                        new QueueHandler().SendObject(loanReply);
                     }
                 }
             }

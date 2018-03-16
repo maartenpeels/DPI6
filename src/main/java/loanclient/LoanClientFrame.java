@@ -7,6 +7,10 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.MessageListener;
+import javax.jms.ObjectMessage;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,8 +21,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import messaging.QUEUE;
 import messaging.QueueHandler;
 import messaging.RequestReply;
+import models.ISendable;
 import models.loan.LoanReply;
 import models.loan.LoanRequest;
 
@@ -43,6 +49,28 @@ public class LoanClientFrame extends JFrame {
      * Create the frame.
      */
     public LoanClientFrame() {
+        new QueueHandler().Receive(QUEUE.loanReply, new MessageListener() {
+            public void onMessage(Message message) {
+                if (message instanceof ObjectMessage) {
+                    ISendable obj = null;
+                    try {
+                        obj = (ISendable)((ObjectMessage) message).getObject();
+                    } catch (JMSException e) {
+                        e.printStackTrace();
+                    }
+                    if(obj instanceof LoanReply){
+                        LoanReply reply = (LoanReply)obj;
+                        LoanRequest request = reply.getLoanRequest();
+                        System.out.println(reply.toString());
+
+                        RequestReply<LoanRequest, LoanReply> req_rep = getRequestReply(request);
+                        req_rep.setReply(reply);
+                        requestReplyList.repaint();
+                    }
+                }
+            }
+        });
+
         setTitle("Loan Client");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -149,6 +177,11 @@ public class LoanClientFrame extends JFrame {
 
         for (int i = 0; i < listModel.getSize(); i++) {
             RequestReply<LoanRequest, LoanReply> rr = listModel.get(i);
+            if(rr.getRequest().getSsn() == request.getSsn()
+                    && rr.getRequest().getTime() == request.getTime()
+                    && rr.getRequest().getAmount() == request.getAmount()) {
+                return rr;
+            }
             if (rr.getRequest() == request) {
                 return rr;
             }

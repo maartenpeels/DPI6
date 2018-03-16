@@ -3,18 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/JMSBankFrame.java" afterPath="$PROJECT_DIR$/src/main/java/bank/JMSBankFrame.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/loanbroker/LoanBrokerFrame.java" afterPath="$PROJECT_DIR$/src/main/java/loanbroker/LoanBrokerFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/bank/BankInterestReply.java" afterPath="$PROJECT_DIR$/src/main/java/models/bank/BankInterestReply.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/bank/BankInterestRequest.java" afterPath="$PROJECT_DIR$/src/main/java/models/bank/BankInterestRequest.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$1.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$2.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame$3.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame.class" afterPath="$PROJECT_DIR$/target/classes/bank/JMSBankFrame.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java" afterPath="$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java" afterPath="$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$1.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$2.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$3.class" afterPath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame$3.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame.class" afterPath="$PROJECT_DIR$/target/classes/loanbroker/LoanBrokerFrame.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/bank/BankInterestReply.class" afterPath="$PROJECT_DIR$/target/classes/models/bank/BankInterestReply.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/models/bank/BankInterestRequest.class" afterPath="$PROJECT_DIR$/target/classes/models/bank/BankInterestRequest.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame$1.class" afterPath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame$1.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame$2.class" afterPath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame$2.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame.class" afterPath="$PROJECT_DIR$/target/classes/loanclient/LoanClientFrame.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/models/loan/LoanReply.class" afterPath="$PROJECT_DIR$/target/classes/models/loan/LoanReply.class" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,49 +80,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoanBrokerFrame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoanBrokerFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/loanbroker/LoanBrokerFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+            <state relative-caret-position="-40">
+              <caret line="141" column="13" lean-forward="true" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#998#1302#0" expanded="true" />
-                <element signature="e#1301#1302#0" expanded="true" />
-                <element signature="e#1439#2439#0" expanded="true" />
-                <element signature="e#2438#2439#0" expanded="true" />
-                <element signature="e#2503#3317#0" expanded="true" />
-                <element signature="e#3316#3317#0" expanded="true" />
-                <element signature="e#5089#5090#0" expanded="true" />
-                <element signature="e#5153#5154#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueueHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messaging/QueueHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="53" column="57" lean-forward="false" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BankInterestRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/models/bank/BankInterestRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
-                <element signature="e#1068#1069#0" expanded="true" />
-                <element signature="e#1127#1128#0" expanded="true" />
-                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1028#1332#0" expanded="true" />
+                <element signature="e#1331#1332#0" expanded="true" />
+                <element signature="e#1469#2469#0" expanded="true" />
+                <element signature="e#2468#2469#0" expanded="true" />
+                <element signature="e#2533#3663#0" expanded="true" />
+                <element signature="e#3662#3663#0" expanded="true" />
+                <element signature="e#5435#5436#0" expanded="true" />
+                <element signature="e#5499#5500#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,12 +162,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoanClientFrame.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoanClientFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2232">
-              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding />
+            <state relative-caret-position="338">
+              <caret line="66" column="48" lean-forward="true" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1454#2351#0" expanded="true" />
+                <element signature="e#2350#2351#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoanReply.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+              <folding>
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1113#1114#0" expanded="true" />
+                <element signature="e#1159#1160#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -240,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/main/java/messaging/MessageSender.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/LoanBrokerQueue.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/ISendable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/loan/LoanRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/Listener.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -257,14 +245,15 @@
         <option value="$PROJECT_DIR$/src/main/java/messaging/QueueNames.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/QUEUE.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/Sender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/BankReplyWithLoanRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/BankRequestWithLoanRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/messaging/QueueHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/bank/BankInterestRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/bank/BankInterestReply.java" />
         <option value="$PROJECT_DIR$/src/main/java/bank/JMSBankFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java" />
         <option value="$PROJECT_DIR$/src/main/java/loanbroker/LoanBrokerFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java" />
       </list>
     </option>
   </component>
@@ -653,12 +642,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1521033821337" duration="4830000" />
       <workItem from="1521104974531" duration="36000" />
-      <workItem from="1521197978386" duration="20090000" />
+      <workItem from="1521197978386" duration="20807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26258000" />
+    <option name="totallyTimeSpent" value="26975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="34" width="1920" height="983" extended-state="6" />
@@ -800,14 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/ISendable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -943,14 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2232">
-          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/loan/LoanRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1037,18 +1010,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/loanbroker/LoanBrokerFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="134" column="13" lean-forward="true" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        <state relative-caret-position="-40">
+          <caret line="141" column="13" lean-forward="true" selection-start-line="141" selection-start-column="13" selection-end-line="141" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#998#1302#0" expanded="true" />
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1439#2439#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2503#3317#0" expanded="true" />
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#5089#5090#0" expanded="true" />
-            <element signature="e#5153#5154#0" expanded="true" />
+            <element signature="e#1028#1332#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+            <element signature="e#1469#2469#0" expanded="true" />
+            <element signature="e#2468#2469#0" expanded="true" />
+            <element signature="e#2533#3663#0" expanded="true" />
+            <element signature="e#3662#3663#0" expanded="true" />
+            <element signature="e#5435#5436#0" expanded="true" />
+            <element signature="e#5499#5500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/loan/LoanReply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1113#1114#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/loanclient/LoanClientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="66" column="48" lean-forward="true" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1454#2351#0" expanded="true" />
+            <element signature="e#2350#2351#0" expanded="true" />
           </folding>
         </state>
       </provider>
